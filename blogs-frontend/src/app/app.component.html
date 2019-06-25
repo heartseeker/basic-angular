@@ -1,0 +1,8 @@
+<header class="header">
+    <a *ngIf="!logon; else logout" class="white" href="javascript:void(0)" routerLink="/users/login">Login</a>
+
+    <ng-template #logout>
+            <a class="white" href="javascript:void(0)" (click)="onLogout()">Logout</a>
+    </ng-template>
+</header>
+<router-outlet></router-outlet>

@@ -1,0 +1,21 @@
+<div class="blog-container">
+  <div class="blog-list">
+    <h1>Blogs</h1>
+    <ul>
+      <li *ngFor="let blog of blogs">{{ blog.title }}  &nbsp;
+        <a href="javascript:void(0)" [routerLink]="['/blogs', blog.id]">Edit</a> &nbsp;
+        <a href="javascript:void(0)" (click)="remove(blog)">Remove</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="blog-create">
+    <h1>Create Blog</h1>
+    <form [formGroup]="form">
+      Title: <input type="text" formControlName="title" /> <br/>
+      Content: <textarea formControlName="content"></textarea> <br/>
+      <button type="submit" (click)="save()">Save</button>
+    </form>
+  </div>
+  
+</div>

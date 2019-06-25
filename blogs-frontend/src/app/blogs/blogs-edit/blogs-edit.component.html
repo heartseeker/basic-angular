@@ -1,0 +1,11 @@
+<div *ngIf="blog">
+
+  <h1>Edit Blog</h1>
+  
+  <form [formGroup]="form">
+      Title: <input type="text" formControlName="title" /> <br/>
+      Content: <textarea formControlName="content"></textarea> <br/>
+      <button type="submit" (click)="update()">Update</button>
+  </form>
+
+</div>

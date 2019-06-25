@@ -1,0 +1,14 @@
+<div>
+  <h1>Login</h1>
+  <form [formGroup]="form">
+    <div *ngIf="form.get('username').errors && form.get('username').touched">
+      <div *ngIf="form.get('username').errors.required">Username is required</div> <br/>
+    </div>
+    <div *ngIf="form.get('password').errors && form.get('password').touched">
+      <div *ngIf="form.get('password').errors.required">Password is required</div> <br/>
+    </div>
+    Username: <input type="text" formControlName="username" /> <br/>
+    Password: <input type="password" formControlName="password" /> <br/>
+    <button (click)="logon()" type="submit">Logon</button>
+  </form>
+</div>
