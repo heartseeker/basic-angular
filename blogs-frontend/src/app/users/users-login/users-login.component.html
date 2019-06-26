@@ -1,5 +1,6 @@
 <div>
   <h1>Login</h1>
+  <h4 *ngIf="error">Invalid username / password</h4>
   <form [formGroup]="form">
     <div *ngIf="form.get('username').errors && form.get('username').touched">
       <div *ngIf="form.get('username').errors.required">Username is required</div> <br/>

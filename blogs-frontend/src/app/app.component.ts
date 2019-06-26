@@ -18,10 +18,14 @@ export class AppComponent implements OnInit {
     this.sharedService.loginState.subscribe((status: boolean) => {
       this.logon = status;
     });
+
+    const isLoggedIn = localStorage.getItem('login') === 'true' ? true : false;
+    this.sharedService.logon(isLoggedIn);
   }
 
   onLogout() {
     this.sharedService.logon(false);
+    localStorage.clear();
     this.router.navigate(['/users/login']);
   }
 }
